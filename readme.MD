@@ -4,7 +4,7 @@
 
 ## Установка
 
-`composer require proklung/symfony-blade-bundle`
+`composer require proklung/bitrix-blade-bundle`
 
 ## Использование
 
