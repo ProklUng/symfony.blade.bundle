@@ -65,6 +65,10 @@
 `@admin` и `@endadmin` - аналогично, но $USER->IsAdmin()
 `@csrf` - сокращенная форма для <input type="hidden" name="sessid" value="{!! bitrix_sessid() !!}" />
 
+### Добавление своих фильтров и директив Blade
+
+Чтобы подцепить кастомный фильтр - нужно пометить сервис тэгом `blade.custom.filter`. Директиву - тэгом `blade.custom.directive`. 
+
 ## Конфигурация
 
 При необходимости пути можно поменять в конфигурации бандла в `local/configs/packages/symfony_blade.yaml`:

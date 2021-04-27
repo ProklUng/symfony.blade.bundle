@@ -7,13 +7,13 @@ services:
   # Регистратор кастомных директив для Битрикса.
   symfony_blade.directive_registrator:
     class: Prokl\SymfonyBladeBundle\Services\DirectiveRegistrator
-    arguments: ['@symfony_blade.compiler', !tagged bitrix.custom.directive]
+    arguments: ['@symfony_blade.compiler', !tagged blade.custom.directive]
     tags: ['service.bootstrap']
 
   # Фреймворконезависимый регистратор кастомных директив для Битрикса.
   symfony_blade.directive_registrator_agnostic:
     class: Prokl\SymfonyBladeBundle\Services\DirectiveRegistrator
-    arguments: ['@symfony_blade.compiler_agnostic', !tagged bitrix.custom.directive]
+    arguments: ['@symfony_blade.compiler_agnostic', !tagged blade.custom.directive]
     tags: ['service.bootstrap']
 
   ############
@@ -24,10 +24,10 @@ services:
   Prokl\SymfonyBladeBundle\Services\Directives\BladeIsDirectives:
     class: Prokl\SymfonyBladeBundle\Services\Directives\BladeIsDirectives
     tags:
-      - { name: bitrix.custom.directive }
+      - { name: blade.custom.directive }
 
   # Отладочные директивы.
   Prokl\SymfonyBladeBundle\Services\Directives\BladeDebugDirectives:
     class: Prokl\SymfonyBladeBundle\Services\Directives\BladeDebugDirectives
     tags:
-      - { name: bitrix.custom.directive }
+      - { name: blade.custom.directive }

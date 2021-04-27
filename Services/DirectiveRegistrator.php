@@ -27,7 +27,7 @@ class DirectiveRegistrator
      * DirectiveRegistrator constructor.
      *
      * @param BladeCompiler $compiler      Blade Compiler.
-     * @param mixed         ...$directives Сервисы, помеченные тэгом bitrix.custom.directive.
+     * @param mixed         ...$directives Сервисы, помеченные тэгом blade.custom.directive.
      */
     public function __construct(BladeCompiler $compiler, ... $directives)
     {
