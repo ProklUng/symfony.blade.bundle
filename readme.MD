@@ -65,9 +65,31 @@
 `@admin` и `@endadmin` - аналогично, но $USER->IsAdmin()
 `@csrf` - сокращенная форма для <input type="hidden" name="sessid" value="{!! bitrix_sessid() !!}" />
 
+Фильтры:
+
+`lcfirst` - первый символ в нижний регистр
+`ucfirst` - первый символ в верхний регистр
+`date` - строку в дату, согласно заданному формату
+`trim` - trim строки
+
+Директивы:
+
+`istrue` / `endistrue`
+`isfalse` / `endisfalse`
+`isnull` / `endisnull`
+`isnotnull` / `endisnotnull`
+
+Дампы
+
+`dump` 
+`dd` 
+
+
+
 ### Добавление своих фильтров и директив Blade
 
-Чтобы подцепить кастомный фильтр - нужно пометить сервис тэгом `blade.custom.filter`. Директиву - тэгом `blade.custom.directive`. 
+Чтобы подцепить кастомный фильтр - нужно пометить сервис тэгом `blade.custom.filter`. 
+Директиву - тэгом `blade.custom.directive` (класс должен реализовывать интерфейс `BladeDirectiveInterface`). 
 
 ## Конфигурация
 
