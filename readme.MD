@@ -1,4 +1,4 @@
-# Бандл для Symfony, обеспечивающий поддержку шаблонизатора Blade в связке Битрикс + Symfony.
+# Бандл для Symfony, обеспечивающий поддержку шаблонизатора Blade в связке Битрикс + Symfony (или Wordpress + Symfony).
 
 На базе [https://github.com/arrilot/bitrix-blade](пакета)
 
