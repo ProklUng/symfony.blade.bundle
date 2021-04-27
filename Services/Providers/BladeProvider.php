@@ -7,7 +7,7 @@ use Illuminate\Contracts\View\Factory;
 use Prokl\SymfonyBladeBundle\Services\BladeCompilerBitrix;
 use Prokl\SymfonyBladeBundle\Services\BladeProcessors\BladeBitrix;
 
-require_once $_SERVER['DOCUMENT_ROOT'].'/local/classes/Bundles/SymfonyBladeBundle/Services/functions/functions.php';
+require_once __DIR__ . '/../functions/functions.php';
 
 /**
  * Class BladeProvider
