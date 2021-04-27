@@ -3,6 +3,7 @@
 namespace Prokl\SymfonyBladeBundle\DependencyInjection;
 
 use Exception;
+use RuntimeException;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
@@ -24,6 +25,13 @@ class SymfonyBladeExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container) : void
     {
+        if (!function_exists('container')) {
+            throw new RuntimeException(
+                'Должна быть определен хэлпер container, возвращающий экземпляр контейнера. 
+                Без нее этот бандл не работает.'
+            );
+        }
+
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
