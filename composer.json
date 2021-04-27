@@ -1,0 +1,38 @@
+{
+    "name": "proklung/bitrix-blade-bundle",
+    "description": "Бандл для Symfony, обеспечивающий поддержку шаблонизатора Blade",
+    "type": "symfony-bundle",
+    "keywords": [
+        "php",
+        "bitrix-symfony",
+        "bitrix-bundle"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gavrilov Fedy",
+            "email": "fedor.gavrilov.75@mail.ru",
+            "homepage": "https://github.com/ProklUng"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/ProklUng/bitrix.blade.bundle/issues",
+        "source": "https://github.com/ProklUng/bitrix.blade.bundle"
+    },
+    "autoload": {
+        "psr-4": {
+            "Prokl\\SymfonyBladeBundle\\": ""
+        }
+    },
+    "require": {
+        "php": ">=7.3",
+        "symfony/dependency-injection": "^4.0 || ^5.0",
+        "symfony/http-kernel": "^4.0 || ^5.0",
+        "symfony/config": "~4|~5",
+        "illuminate/view": "~6 | ~7",
+        "illuminate/container": "~6 | ~7"
+    },
+    "require-dev": {
+        "proklung/phpunit-testing-tools": "^1.0"
+    }
+}
