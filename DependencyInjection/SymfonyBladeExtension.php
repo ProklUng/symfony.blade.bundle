@@ -48,6 +48,10 @@ class SymfonyBladeExtension extends Extension
         );
 
         $loader->load('services.yaml');
+        if ($this->isBitrix()) {
+            $loader->load('bitrix.yaml');
+        }
+
         $loader->load('directives.yaml');
         $loader->load('filters.yaml');
     }
@@ -58,5 +62,15 @@ class SymfonyBladeExtension extends Extension
     public function getAlias()
     {
         return 'symfony_blade';
+    }
+
+    /**
+     * Это Битрикс?
+     *
+     * @return boolean
+     */
+    private function isBitrix() : bool
+    {
+        return !(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true);
     }
 }

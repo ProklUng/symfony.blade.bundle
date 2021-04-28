@@ -4,30 +4,6 @@ services:
     autoconfigure: true
     public: true
 
-  # Инициализация Blade в Битриксе.
-  symfony_blade.register_bitrix:
-    class: Prokl\SymfonyBladeBundle\Services\Providers\BladeProvider
-    factory: ['Prokl\SymfonyBladeBundle\Services\Providers\BladeProvider', 'register']
-    arguments: ['%symfony_blade%']
-    tags: ['service.bootstrap']
-
-  # Фабрика View для Битрикса.
-  symfony_blade.view_factory:
-    class: Illuminate\Contracts\View\Factory
-    factory: ['Prokl\SymfonyBladeBundle\Services\Providers\BladeProvider', 'getViewFactory']
-
-  # Blade Compiler для Битрикса.
-  symfony_blade.compiler:
-    class: Prokl\SymfonyBladeBundle\Services\BladeCompilerBitrix
-    factory: ['Prokl\SymfonyBladeBundle\Services\Providers\BladeProvider', 'getCompiler']
-
-  # Blade для Битрикса.
-  symfony_blade.blade:
-    class: Prokl\SymfonyBladeBundle\Services\Blade
-    arguments:
-      - '@symfony_blade.view_factory'
-      - ['%symfony_blade.base_path%']
-
   # Фреймворконезависимая инициализация Blade.
   symfony_blade.register_agnostic:
     class: Prokl\SymfonyBladeBundle\Services\Providers\BladeAgnosticProvider
@@ -51,9 +27,3 @@ services:
     arguments:
       - '@symfony_blade.view_factory_agnostic'
       - ['%symfony_blade.base_path%']
-
-  # Очистка кэша при наличии GET параметра clear_cache.
-  symfony_blade.clear_cache:
-    class: Prokl\SymfonyBladeBundle\Services\Utils\BladeCacheClearer
-    tags:
-      - { name: bitrix.events.init, module: main, event: OnProlog, method: clear, sort: 1 }

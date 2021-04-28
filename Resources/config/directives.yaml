@@ -4,12 +4,6 @@ services:
     autoconfigure: true
     public: true
 
-  # Регистратор кастомных директив для Битрикса.
-  symfony_blade.directive_registrator:
-    class: Prokl\SymfonyBladeBundle\Services\DirectiveRegistrator
-    arguments: ['@symfony_blade.compiler', !tagged blade.custom.directive]
-    tags: ['service.bootstrap']
-
   # Фреймворконезависимый регистратор кастомных директив для Битрикса.
   symfony_blade.directive_registrator_agnostic:
     class: Prokl\SymfonyBladeBundle\Services\DirectiveRegistrator
