@@ -30,7 +30,8 @@
         "symfony/http-kernel": "^4.0 || ^5.0",
         "symfony/config": "~4|~5",
         "illuminate/view": "~6 | ~7",
-        "illuminate/container": "~6 | ~7"
+        "illuminate/container": "~6 | ~7",
+        "arrilot/bitrix-hermitage": "^1"
     },
     "require-dev": {
         "proklung/phpunit-testing-tools": "^1.0"
