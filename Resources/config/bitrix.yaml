@@ -5,11 +5,12 @@ services:
     public: true
 
   # Инициализация Blade в Битриксе.
-  symfony_blade.register_bitrix:
+  symfony_blade.core_register_bitrix:
     class: Prokl\SymfonyBladeBundle\Services\Providers\BladeProvider
     factory: ['Prokl\SymfonyBladeBundle\Services\Providers\BladeProvider', 'register']
     arguments: ['%symfony_blade%']
-    tags: ['service.bootstrap']
+    tags:
+      - { name: 'service.bootstrap', priority: 100 }
 
   # Фабрика View для Битрикса.
   symfony_blade.view_factory:

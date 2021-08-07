@@ -25,7 +25,7 @@
         }
     },
     "require": {
-        "php": ">=7.3",
+        "php": ">=7.3 || ^8.0",
         "symfony/dependency-injection": "^4.0 || ^5.0",
         "symfony/http-kernel": "^4.0 || ^5.0",
         "symfony/config": "~4|~5",
@@ -34,6 +34,7 @@
         "arrilot/bitrix-hermitage": "^1"
     },
     "require-dev": {
-        "proklung/phpunit-testing-tools": "^1.0"
+        "proklung/phpunit-testing-tools": "^1.0",
+        "icanhazstring/composer-unused": "^0.7.5"
     }
 }

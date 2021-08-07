@@ -5,11 +5,12 @@ services:
     public: true
 
   # Фреймворконезависимая инициализация Blade.
-  symfony_blade.register_agnostic:
+  symfony_blade.core_register_agnostic:
     class: Prokl\SymfonyBladeBundle\Services\Providers\BladeAgnosticProvider
     factory: ['Prokl\SymfonyBladeBundle\Services\Providers\BladeAgnosticProvider', 'register']
     arguments: ['%symfony_blade%']
-    tags: ['service.bootstrap']
+    tags:
+      - { name: 'service.bootstrap', priority: 100 }
 
   # Фреймворконезависимая фабрика View.
   symfony_blade.view_factory_agnostic:
