@@ -39,4 +39,5 @@ services:
   symfony_blade.directive_registrator:
     class: Prokl\SymfonyBladeBundle\Services\DirectiveRegistrator
     arguments: ['@symfony_blade.compiler', !tagged blade.custom.directive]
-    tags: ['service.bootstrap']
+    tags:
+      - { name: 'service.bootstrap', priority: 200 }
